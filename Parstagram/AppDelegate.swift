@@ -5,7 +5,7 @@
 //  Created by mac on 11/15/20.
 //  Copyright © 2020 KhalidIOS. All rights reserved.
 //
-
+import Parse
 import UIKit
 
 @UIApplicationMain
@@ -15,6 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let parseConfig = ParseClientConfiguration {
+                $0.applicationId = "rMDATYmznnsiX4NCLKCvGh5CiWWz1GiMS975aUov" // <- UPDATE
+                $0.clientKey = "EZ4oVXHi13UTGfdL1WmhzzDI3qUdpI6uArOHemMn" // <- UPDATE
+                $0.server = "https://parseapi.back4app.com"
+        }
+        Parse.initialize(with: parseConfig)
         return true
     }
 
